@@ -9,7 +9,7 @@ composer dump-autoload
     https://odan.github.io/2019/11/05/slim4-tutorial.html
 
 ##   目录结构
-    .
+├── .
 ├── config/             配置文件
 ├── public/             
 │   └── .htaccess       Apache定向规则
