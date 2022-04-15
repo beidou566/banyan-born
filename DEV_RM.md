@@ -12,9 +12,9 @@ composer dump-autoload
 ├── app/
 │   └── common          基础的
 │   └── action            入口
-│   └── route           URL路由
+│   └── route           URL路由(该目录下的文件会自动加载)
 │   └── index.php       入口
-├── config/             配置文件
+├── conf/               配置文件
 ├── public/             
 │   └── .htaccess       Apache定向规则
 │   └── index.php       入口

@@ -9,20 +9,17 @@ composer dump-autoload
     https://odan.github.io/2019/11/05/slim4-tutorial.html
 
 ##   目录结构
-├── app/
-│   └── common          基础的
-│   └── action            入口
-│   └── route           URL路由
-│   └── index.php       入口
+    .
 ├── config/             配置文件
 ├── public/             
 │   └── .htaccess       Apache定向规则
 │   └── index.php       入口
+├── templates/          Twig 模板
+├── src/                PHP源代码 (应用程序)
 ├── tmp/                临时文件(cache and log)
 ├── vendor/             composer 目录
 ├── .htaccess           重定向到 public/ directory
 └── .gitignore          Git忽略规则
-
 
 ##   函数和类、属性命名
   类的命名采用驼峰法（首字母大写），例如 User、UserType；
@@ -47,13 +44,5 @@ composer dump-autoload
     ;extension=pdo_mysql => extension=pdo_mysql
   [解决思路]
     https://blog.csdn.net/weixin_36129381/article/details/113472417
-
-2.[问题描述]：
-      git 和 小乌龟TortoiseGit提交代码冲突
-  [解决办法]：
-    小乌龟的设置中网络,如下修改
-    D:\Program Files\TortoiseGit\bin\TortoiseGitPlink.exe => C:\Program Files\Git\usr\bin\ssh.exe
-  [解决思路]
-    https://www.pianshen.com/article/73391156969/
 
 
