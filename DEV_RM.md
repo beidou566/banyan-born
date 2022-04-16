@@ -27,7 +27,6 @@ composer dump-autoload
 ##   函数和类、属性命名
   类的命名采用驼峰法（首字母大写），例如 User、UserType；
   函数的命名使用小写字母和下划线（小写字母开头）的方式，例如 get_client_ip；
-  方法的命名使用驼峰法（首字母小写），例如 getUserName；
   属性的命名使用驼峰法（首字母小写），例如 tableName、instance；
   特例：以双下划线__打头的函数或方法作为魔术方法，例如 __call 和 __autoload；
 

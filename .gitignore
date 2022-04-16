@@ -1,6 +1,8 @@
-build/
+.vscode/
+var/
 vendor/
 .idea/
+
 .phpunit.result.cache
 composer.lock
 
@@ -12,4 +14,4 @@ tmp/*
 logs/*
 !logs/empty
 
-.vscode/
+
