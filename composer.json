@@ -1,29 +1,23 @@
 {
     "name": "ebola/banyan-born",
     "require": {
-        "php": "^7.4|| ^8.0",
-        
-        "lcobucci/jwt": "^4.0",
-        "pecee/pixie": "^4.15",
-        "pimple/pimple": "^3.2",
-        "predis/predis": "^1.1",
-        "selective/basepath": "^2.1",
-        "slim/http-cache": "^1.1",
+        "php": "^7.3|| ^8.0",
+        "php-di/php-di": "^6.0",
 
+        "monolog/monolog": "^2.2",
+        
         "slim/slim": "^4.8",
         "slim/psr7": "^1.0.0",
         "slim/twig-view": "^3.2",
+        "slim/http-cache": "^1.1",
+
 
         "symfony/cache": "^5.3",
         "vlucas/phpdotenv": "^5.1",
-        "monolog/monolog": "^2.2"
-    },
-    "config": {
-        "platform": {
-            "php": "7.4.11"
-        },
-        "sort-packages": true,
-        "process-timeout": 0
+        
+        "catfan/medoo": "^2.1"
+
+
     },
     "autoload": {
         "psr-4": {

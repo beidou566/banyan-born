@@ -1,9 +1,9 @@
 <?php
 
 /*共通类* 单例
-Instance::get_instance()->
+MyInstance::get_instance()->
  */
-class Instance
+class MyInstance
 {
     //创建静态私有的变量保存该类对象
     private static $_instance;
@@ -71,7 +71,7 @@ class Instance
                 $arr[$k] = '';
             }
             if(is_array($v)) {
-                $arr[$k] = Instance::get_instance()->null_to_str($v);
+                $arr[$k] = MyInstance::get_instance()->null_to_str($v);
             } 
         }
         return $arr;
@@ -89,7 +89,7 @@ class Instance
             {
                 if($fileinfo->isDir())
                 {
-                    Instance::get_instance()->scan_all($dir.DIRECTORY_SEPARATOR.$fileinfo);
+                    MyInstance::get_instance()->scan_all($dir.DIRECTORY_SEPARATOR.$fileinfo);
                 }
                 else
                 {
