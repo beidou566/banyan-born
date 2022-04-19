@@ -1,8 +1,5 @@
-﻿##   常用命令
-//更新框架
-composer update
-//新配置后，加载框架
-composer dump-autoload
+﻿##   组合框架
+    slim4 + twig +medoo
 
 ##   目录结构
     .
@@ -32,8 +29,8 @@ composer dump-autoload
 ##   函数和类、属性命名
   文件夹命名使用小写字母，例如 core
   类的命名采用驼峰法（首字母大写），例如 User、UserType；
-  函数的命名使用小写字母和下划线（小写字母开头）的方式，例如 get_client_ip；
   方法的命名使用驼峰法（首字母小写），例如 getUserName；
+  函数的命名使用小写字母和下划线（小写字母开头）的方式，例如 get_client_ip；
   属性的命名使用驼峰法（首字母小写），例如 tableName、instance；
   特例：以双下划线__打头的函数或方法作为魔术方法，例如 __call 和 __autoload；
 
@@ -54,4 +51,9 @@ composer dump-autoload
   [解决思路]
     https://blog.csdn.net/weixin_36129381/article/details/113472417
 
+##   常用命令
+//更新框架
+composer update
+//新配置后，加载框架
+composer dump-autoload
 
