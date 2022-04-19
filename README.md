@@ -4,24 +4,33 @@ composer update
 //新配置后，加载框架
 composer dump-autoload
 
-##   框架来源 Slim 4 Tutorial
-    https://github.com/odan/slim4-tutorial
-    https://odan.github.io/2019/11/05/slim4-tutorial.html
-
 ##   目录结构
     .
-├── config/             配置文件
+├── core/                 配置文件
+│   └── App.php           index.php call this
+│   └── Container.php     PHP-DI创建的组件 monolog twig medoo在此引入
+│   └── DotEnv.php        引入 .evn
+│   └── Middlewares.php   中间件 ErrorHandler.php 异常错误处理在此引入
+│   └── Route.phpp        用户路由类
+│   └── RouteCors.php     跨域路由
+│   └── RouteNotFound.php 未发现路由
 ├── public/             
-│   └── .htaccess       Apache定向规则
-│   └── index.php       入口
-├── templates/          Twig 模板
-├── src/                PHP源代码 (应用程序)
-├── tmp/                临时文件(cache and log)
-├── vendor/             composer 目录
-├── .htaccess           重定向到 public/ directory
-└── .gitignore          Git忽略规则
+│   └── .htaccess         Apache定向规则
+│   └── index.php         入口
+├── src/                
+│   └── Action/           控制层
+│   └── Mapper/           数据库处理
+│   └── View/             Twig 模板
+├── var/                  临时文件(cache and log)
+├── vendor/               composer 目录
+├── .htaccess             重定向到 public/ directory
+└── .gitignore            Git忽略规则
+└── composer.json         
+└── data.sql              demo 数据sql 
+└── README.md             说明 
 
 ##   函数和类、属性命名
+  文件夹命名使用小写字母，例如 core
   类的命名采用驼峰法（首字母大写），例如 User、UserType；
   函数的命名使用小写字母和下划线（小写字母开头）的方式，例如 get_client_ip；
   方法的命名使用驼峰法（首字母小写），例如 getUserName；

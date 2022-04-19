@@ -1,30 +1,37 @@
 <?php
+
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
-use Slim\Views\Twig;
 
 
-// $app->get('/', 'App\Controller\Hello:getStatus')->setName('main');
 // $app->get('/hello', 'App\Controller\Hello:getStatusAPI')->setName('main_api');
 
-$app->get('/test', function (Request $request, Response $response, array $args): Response {
+$app->get('/', function (Request $request, Response $response, array $args): Response {
+    $result = ['timestamp' => time()];
+    $response->getBody()->write(json_encode($result));
+    return $response            
+            ->withHeader('Content-Type', 'application/json')
+            ->withStatus(200);
+});
+
+
+$app->get('/test_log', function (Request $request, Response $response, array $args): Response {
 // Sample log message
-    $this->get('logger')->info("Main/ Home route generic '/' route");
-  $data = [
+ $this->get('logger')->info(" write log is ok");
+  $result = [
       'status' => [
           'code' => 200,
           'message' => 'OK'
       ]
   ];
-  $payload = json_encode($data, JSON_PRETTY_PRINT);
-  $response->getBody()->write($payload);
-  return $response->withStatus($data['status']['code'])
+
+  $response->getBody()->write(json_encode($result, JSON_PRETTY_PRINT));
+  return $response->withStatus($result['status']['code'])
       ->withHeader('Content-Type', 'application/json;charset=UTF-8');
 });
 
 $app->get('/test_twig', function (Request $request, Response $response, array $args): Response {
-
-    $viewData = ['message'=>"Hello world!"];
+    $viewData = ['message'=>"twig is ok !"];
     return  $this->get('view')->render($response,'hello.twig',$viewData);
 });
 
@@ -42,3 +49,5 @@ $app->get('/test_httpcache', function (Request $request, Response $response, arr
      $response->getBody()->write('httpcache!');
      return $response;
 });
+
+$app->get('/test_mvc', 'App\Action\HelloAction:handle');
